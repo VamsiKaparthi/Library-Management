@@ -24,13 +24,7 @@ body{
 fieldset{
     border: none;
 }
-#popup-form{
-    display: flex;
-    background-color: white;
-    width: 280px;
-    border-radius: 15px;
-    top:200px;
-}
+
 fieldset{
     display: flex;
     justify-content: center;
@@ -52,4 +46,18 @@ fieldset>button{
     height: 35px;
     margin: 5px;
     
+}
+.form{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 50%;
+    background-color: white;
+    width: 280px;
+    border-radius: 15px;
+    top:200px;
+    align-items: center;
+    justify-content: center;
 }
