@@ -24,7 +24,7 @@ submit.addEventListener("click",(e)=>{
         alert("Ensure you fill in all fields");
     }
     else{
-        let book = new Book(document.getElementById("Book-name").value,document.getElementById("Author").value,document.getElementById("pages").value,document.getElementById("read").value);
+        let book = new Book(document.getElementById("Book-name").value,document.getElementById("Author").value,document.getElementById("pages").value,document.getElementById("read").checked);
         console.log(document.getElementById("Book-name").value)
         addBookToLibrary(book);
         bookName.value=""
@@ -34,4 +34,3 @@ submit.addEventListener("click",(e)=>{
         console.log(myLibrary)
     }
 })
-console.log(myLibrary)
