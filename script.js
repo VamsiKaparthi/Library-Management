@@ -13,7 +13,14 @@ function Book(book,author,pages,check){
 function addBookToLibrary(book){
     myLibrary.push(book)
 }
-
+function createCard(book){
+    let card = document.createElement('div');
+    card.style.backgroundColor = "white"
+    let bookCards = document.getElementById("books");
+    card.classList.add('book-card');
+    card.style.backgroundColor="red";
+    bookCards.append(card);
+}
 let submit = document.getElementById("submit")
 submit.addEventListener("click",(e)=>{
     e.preventDefault()
@@ -32,5 +39,6 @@ submit.addEventListener("click",(e)=>{
         no.value=""
         document.getElementById("form").style.display="none";
         console.log(myLibrary)
+        createCard(book)
     }
 })
