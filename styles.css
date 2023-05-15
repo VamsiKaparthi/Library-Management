@@ -67,7 +67,12 @@ fieldset>button{
     flex-wrap: wrap;
 }
 .book-card{
-    height: 45%;
-    width: 33%;
-    background-color: red
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    height: max(250px,40%);
+    width: min(350px,40%);
+    background-color: #baff35;
+    border-radius: 10px;
+    margin: 5px;
 }

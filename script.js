@@ -15,12 +15,29 @@ function addBookToLibrary(book){
 }
 function createCard(book){
     let card = document.createElement('div');
-    card.style.backgroundColor = "white"
     let bookCards = document.getElementById("books");
     card.classList.add('book-card');
     card.style.backgroundColor="red";
     bookCards.append(card);
 }
+let r = document.getElementById("rd");
+r.addEventListener("click",(e)=>{
+    if(r.innerHTML=="Read"){
+        console.log("hello")
+        r.style.backgroundColor='red'
+        r.innerHTML='Not Read'
+    }
+    else{
+        console.log("hi");
+        r.style.backgroundColor='green'
+        r.innerHTML='Read'
+    }
+})
+let cl = document.getElementById("close")
+cl.addEventListener("click",(e)=>{
+    let x = cl.parentNode;
+    x.style.display="none";
+})
 let submit = document.getElementById("submit")
 submit.addEventListener("click",(e)=>{
     e.preventDefault()
