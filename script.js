@@ -17,7 +17,7 @@ function createCard(book){
     let card = document.createElement('div');
     let bookCards = document.getElementById("books");
     card.classList.add('book-card');
-    card.style.backgroundColor="red";
+    card.style.backgroundColor="#5163ff";
     bookCards.append(card);
 }
 let r = document.getElementById("rd");

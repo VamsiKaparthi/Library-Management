@@ -50,6 +50,8 @@ fieldset>button{
 .form{
     display: none;
     position: fixed;
+    z-index: 2147483647;
+
     top: 50%;
     left: 50%;
     transform: translate(-50%);
@@ -60,6 +62,7 @@ fieldset>button{
     top:200px;
     align-items: center;
     justify-content: center;
+    
 }
 .books{
     height: 86%;
