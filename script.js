@@ -32,7 +32,7 @@ function createCard(book){
         read='Not-read'
         backgroundColor='red'
     }
-    let card_details=`<img id="close-${i}" src="/image/cross.svg" height="40px" style="align-self: flex-end;" >
+    let card_details=`<img id="close-${i}" src="./image/cross.svg" height="40px" style="align-self: flex-end;" >
         <label style="font-size: 28px; height: 15%; align-self: center;">${title}</label>
         <label style="font-size: 20px; padding-left: 18%;margin-bottom:10px;">By: ${author}</label>
         <label style="font-size: 20px; padding-left: 18%; margin-bottom: 20%;">Pages: ${pages}</label>
