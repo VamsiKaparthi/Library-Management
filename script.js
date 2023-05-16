@@ -36,7 +36,7 @@ function createCard(book){
         <label style="font-size: 28px; height: 15%; align-self: center;">${title}</label>
         <label style="font-size: 20px; padding-left: 18%;">By: ${author}</label>
         <label style="font-size: 20px; padding-left: 18%; margin-bottom: 20%;">Pages: ${pages}</label>
-        <button id="rd" style="opacity: 70%;font-size:18px;background-color:${backgroundColor}; border:none; height:30px; width:70%;justify-self: end; margin-left: 18%; border-radius:2px;">${read}</button>`
+        <button id="rd-${i}" style="opacity: 70%;font-size:18px;background-color:${backgroundColor}; border:none; height:30px; width:70%;justify-self: end; margin-left: 18%; border-radius:2px;">${read}</button>`
 
     card.insertAdjacentHTML('beforeend',card_details);
    
@@ -44,8 +44,20 @@ function createCard(book){
     document.querySelector("#close-"+i).addEventListener('click',(e)=>{
         //console.log(this);
         let removeEl = e.target.parentNode;
-        console.log(removeEl);
+        // console.log(removeEl);
         books.removeChild(removeEl);
+    })
+    //adding eventlistenere to read status button
+    let r = document.querySelector("#rd-"+i);
+    r.addEventListener('click',(e)=>{
+        if(r.innerHTML=="Read"){
+            r.style.backgroundColor='red'
+            r.innerHTML='Not Read'
+        }
+        else{
+            r.style.backgroundColor='green'
+            r.innerHTML='Read'
+        }
     })
     i=i+1;
 }
