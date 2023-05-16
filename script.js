@@ -42,9 +42,7 @@ function createCard(book){
    
     //if multiple identical EventListeners are registered on the same eventtarget wit the same parameters, the duplicate instances are discarded. They do not cause the the eventlistener to be called twice
     document.querySelector("#close-"+i).addEventListener('click',(e)=>{
-        //console.log(this);
         let removeEl = e.target.parentNode;
-        // console.log(removeEl);
         books.removeChild(removeEl);
     })
     //adding eventlistenere to read status button
@@ -61,25 +59,6 @@ function createCard(book){
     })
     i=i+1;
 }
-
-// let r = document.getElementById("rd");
-// r.addEventListener("click",(e)=>{
-//     if(r.innerHTML=="Read"){
-//         console.log("hello")
-//         r.style.backgroundColor='red'
-//         r.innerHTML='Not Read'
-//     }
-//     else{
-//         console.log("hi");
-//         r.style.backgroundColor='green'
-//         r.innerHTML='Read'
-//     }
-// })
-// let cl = document.getElementById("close")
-// cl.addEventListener("click",(e)=>{
-//     let x = cl.parentNode;
-//     x.style.display="none";
-// })
 let submit = document.getElementById("submit")
 submit.addEventListener("click",(e)=>{
     e.preventDefault()
