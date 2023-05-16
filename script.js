@@ -13,31 +13,61 @@ function Book(book,author,pages,check){
 function addBookToLibrary(book){
     myLibrary.push(book)
 }
+let i=0;
 function createCard(book){
     let card = document.createElement('div');
-    let bookCards = document.getElementById("books");
     card.classList.add('book-card');
-    card.style.backgroundColor="#5163ff";
-    bookCards.append(card);
-}
-let r = document.getElementById("rd");
-r.addEventListener("click",(e)=>{
-    if(r.innerHTML=="Read"){
-        console.log("hello")
-        r.style.backgroundColor='red'
-        r.innerHTML='Not Read'
+    let books = document.getElementById("books");
+    books.appendChild(card);
+    let title = book.bookName;
+    let author = book.authorName;
+    let pages = book.pagesNo;
+    let read = book.checkBox;
+    let backgroundColor = 'red';
+    if(read==true){
+        read='Read'
+        backgroundColor='green';
     }
     else{
-        console.log("hi");
-        r.style.backgroundColor='green'
-        r.innerHTML='Read'
+        read='Not-read'
+        backgroundColor='red'
     }
-})
-let cl = document.getElementById("close")
-cl.addEventListener("click",(e)=>{
-    let x = cl.parentNode;
-    x.style.display="none";
-})
+    let card_details=`<img id="close-${i}" src="/image/cross.svg" height="40px" style="align-self: flex-end;" >
+        <label style="font-size: 28px; height: 15%; align-self: center;">${title}</label>
+        <label style="font-size: 20px; padding-left: 18%;">By: ${author}</label>
+        <label style="font-size: 20px; padding-left: 18%; margin-bottom: 20%;">Pages: ${pages}</label>
+        <button id="rd" style="opacity: 70%;font-size:18px;background-color:${backgroundColor}; border:none; height:30px; width:70%;justify-self: end; margin-left: 18%; border-radius:2px;">${read}</button>`
+
+    card.insertAdjacentHTML('beforeend',card_details);
+   
+    //if multiple identical EventListeners are registered on the same eventtarget wit the same parameters, the duplicate instances are discarded. They do not cause the the eventlistener to be called twice
+    document.querySelector("#close-"+i).addEventListener('click',(e)=>{
+        //console.log(this);
+        let removeEl = e.target.parentNode;
+        console.log(removeEl);
+        books.removeChild(removeEl);
+    })
+    i=i+1;
+}
+
+// let r = document.getElementById("rd");
+// r.addEventListener("click",(e)=>{
+//     if(r.innerHTML=="Read"){
+//         console.log("hello")
+//         r.style.backgroundColor='red'
+//         r.innerHTML='Not Read'
+//     }
+//     else{
+//         console.log("hi");
+//         r.style.backgroundColor='green'
+//         r.innerHTML='Read'
+//     }
+// })
+// let cl = document.getElementById("close")
+// cl.addEventListener("click",(e)=>{
+//     let x = cl.parentNode;
+//     x.style.display="none";
+// })
 let submit = document.getElementById("submit")
 submit.addEventListener("click",(e)=>{
     e.preventDefault()
