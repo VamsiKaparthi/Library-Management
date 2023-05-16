@@ -34,12 +34,23 @@ function createCard(book){
     }
     let card_details=`<img id="close-${i}" src="/image/cross.svg" height="40px" style="align-self: flex-end;" >
         <label style="font-size: 28px; height: 15%; align-self: center;">${title}</label>
-        <label style="font-size: 20px; padding-left: 18%;">By: ${author}</label>
+        <label style="font-size: 20px; padding-left: 18%;margin-bottom:10px;">By: ${author}</label>
         <label style="font-size: 20px; padding-left: 18%; margin-bottom: 20%;">Pages: ${pages}</label>
         <button id="rd-${i}" style="opacity: 70%;font-size:18px;background-color:${backgroundColor}; border:none; height:30px; width:70%;justify-self: end; margin-left: 18%; border-radius:2px;">${read}</button>`
-
+    card.style.backgroundColor=color();
     card.insertAdjacentHTML('beforeend',card_details);
-   
+    function color(){
+        let x = Math.floor((Math.random() * 3) + 1);
+        console.log(x);
+        if(x==1){
+            return("#5263FF")
+        }
+        else if(x==2){
+           return("C379FF")
+        }
+        return "red";
+    }
+    
     //if multiple identical EventListeners are registered on the same eventtarget wit the same parameters, the duplicate instances are discarded. They do not cause the the eventlistener to be called twice
     document.querySelector("#close-"+i).addEventListener('click',(e)=>{
         let removeEl = e.target.parentNode;
