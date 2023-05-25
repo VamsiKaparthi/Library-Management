@@ -4,12 +4,21 @@ add.addEventListener("click",()=>{
     console.log("hi");
 })
 let myLibrary=[];
-function Book(book,author,pages,check){
-    this.bookName=book;
-    this.authorName=author;
-    this.pagesNo=pages;
-    this.checkBox=check;
+//use class instead of object constructor
+class Book{
+    constructor(book,author,pages,check){
+        this.bookName=book;
+        this.authorName=author;
+        this.pagesNo=pages;
+        this.checkBox=check;
+    }
 }
+// function Book(book,author,pages,check){
+//     this.bookName=book;
+//     this.authorName=author;
+//     this.pagesNo=pages;
+//     this.checkBox=check;
+// }
 function addBookToLibrary(book){
     myLibrary.push(book)
 }
